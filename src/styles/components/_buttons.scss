@@ -15,6 +15,17 @@
     @include mixin.transition-transform;
   }
 
+  &__icon__arrow {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-image: url("../../assets/img/icons/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include mixin.transition-transform;
+  }
+
   &--play {
     background-color: #f0ea6e;
 
@@ -23,6 +34,10 @@
 
       .button__icon__controller {
         transform: rotate(-30deg);
+      }
+
+      .button__icon__arrow {
+        background-image: url("../../assets/img/icons/arrow_hover.svg");
       }
     }
   }
