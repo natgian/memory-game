@@ -1,0 +1,29 @@
+@use "../abstracts/functions" as function;
+@use "../abstracts/mixins" as mixin;
+
+.button {
+  @include mixin.flex-center;
+  gap: function.px-to-rem(20);
+  font-family: "Red Rose", Arial, sans-serif;
+  font-size: function.px-to-rem(40);
+  font-weight: 700;
+  padding: function.px-to-rem(24);
+  border: none;
+  @include mixin.transition-transform;
+
+  &__icon__controller {
+    @include mixin.transition-transform;
+  }
+
+  &--play {
+    background-color: #f0ea6e;
+
+    &:hover {
+      transform: scale(1.05);
+
+      .button__icon__controller {
+        transform: rotate(-30deg);
+      }
+    }
+  }
+}

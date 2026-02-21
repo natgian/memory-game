@@ -1,1 +1,8 @@
+@use "./abstracts/variables";
 @use "./base/reset";
+@use "./base/typography";
+@use "./pages/home";
+
+body {
+  height: 100vh;
+}

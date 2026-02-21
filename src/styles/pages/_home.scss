@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as variable;
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/functions" as function;
+@use "../components/buttons";
+
+.page-home {
+  background-color: variable.$primary-dark;
+  @include mixin.flex-center;
+
+  &__decorator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.startscreen {
+  @include mixin.flex-center;
+  flex-direction: column;
+  color: #fff;
+
+  max-width: function.px-to-rem(1000);
+
+  &__intro-text {
+    font-family: "Almarai", Arial, sans-serif;
+    font-size: function.px-to-rem(48);
+    font-weight: 400;
+    align-self: flex-start;
+  }
+
+  &__title {
+    font-family: "Red Rose", sans-serif;
+    font-size: function.px-to-rem(140);
+    font-weight: 700;
+    padding-bottom: function.px-to-rem(84);
+  }
+}
