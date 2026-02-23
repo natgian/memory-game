@@ -7,7 +7,7 @@
   background-color: variable.$primary-dark;
   @include mixin.flex-center;
 
-  &__decorator {
+  &__decoration {
     position: absolute;
     bottom: 0;
     left: 0;

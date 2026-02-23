@@ -1,3 +1,4 @@
+@use "../abstracts/variables" as variable;
 @use "../abstracts/functions" as function;
 @use "../abstracts/mixins" as mixin;
 
@@ -11,11 +12,11 @@
   border: none;
   @include mixin.transition-transform;
 
-  &__icon__controller {
+  &__icon--transition {
     @include mixin.transition-transform;
   }
 
-  &__icon__arrow {
+  &__icon--arrow {
     display: flex;
     width: 40px;
     height: 40px;
@@ -26,17 +27,18 @@
     @include mixin.transition-transform;
   }
 
-  &--play {
+  &--primary {
+    color: variable.$primary-dark;
     background-color: #f0ea6e;
 
     &:hover {
       transform: scale(1.05);
 
-      .button__icon__controller {
+      .button__icon--transition {
         transform: rotate(-30deg);
       }
 
-      .button__icon__arrow {
+      .button__icon--arrow {
         background-image: url("../../assets/img/icons/arrow_hover.svg");
       }
     }
