@@ -5,7 +5,7 @@
 .button {
   @include mixin.flex-center;
   gap: function.px-to-rem(20);
-  font-family: "Red Rose", Arial, sans-serif;
+  font-family: variable.$font-accent;
   font-size: function.px-to-rem(40);
   font-weight: 700;
   padding: function.px-to-rem(24);

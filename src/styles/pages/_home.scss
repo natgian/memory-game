@@ -22,14 +22,14 @@
   max-width: function.px-to-rem(1000);
 
   &__intro-text {
-    font-family: "Almarai", Arial, sans-serif;
+    font-family: variable.$font-content;
     font-size: function.px-to-rem(48);
     font-weight: 400;
     align-self: flex-start;
   }
 
   &__title {
-    font-family: "Red Rose", sans-serif;
+    font-family: variable.$font-accent;
     font-size: function.px-to-rem(140);
     font-weight: 700;
     padding-bottom: function.px-to-rem(84);
