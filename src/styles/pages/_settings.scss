@@ -1,0 +1,75 @@
+@use "../abstracts/functions" as function;
+@use "../abstracts/variables" as variable;
+
+.page-settings {
+  padding-top: function.px-to-rem(112);
+  font-family: variable.$font-content;
+  font-size: function.px-to-rem(20);
+  font-weight: 400;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: function.px-to-rem(62);
+  max-width: function.px-to-rem(1000);
+  margin: 0 auto;
+
+  &__title {
+    font-family: variable.$font-accent;
+    font-size: function.px-to-rem(54);
+    font-weight: 700;
+    position: relative;
+    padding-left: function.px-to-rem(12);
+  }
+
+  &__title--decoration {
+    position: absolute;
+    bottom: function.px-to-rem(-12);
+    left: function.px-to-rem(-12);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__inputs__container {
+    max-width: function.px-to-rem(400);
+  }
+
+  &__inputs__container fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: function.px-to-rem(12);
+    border: none;
+    margin-bottom: function.px-to-rem(44);
+
+    &:hover label:has(input:checked) {
+      font-weight: 400;
+    }
+  }
+
+  &__inputs__container label {
+    padding-left: function.px-to-rem(44);
+    padding-bottom: function.px-to-rem(6);
+    cursor: pointer;
+
+    &:hover {
+      font-weight: 700;
+    }
+
+    &:has(input:checked) {
+      font-weight: 700;
+    }
+  }
+
+  &__inputs__container legend {
+    display: flex;
+    align-items: center;
+    gap: function.px-to-rem(8);
+    font-weight: 700;
+    font-size: function.px-to-rem(24);
+    margin-bottom: function.px-to-rem(12);
+  }
+}
