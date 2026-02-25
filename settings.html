@@ -9,7 +9,7 @@
     <div class="settings">
         <h1 class="settings__title">
           Settings
-        <img class="settings__title--decoration" src="./src/assets/img/ui-elements/line_long.png">
+        <img class="settings__title--decoration" src="/src/assets/img/ui-elements/line_long.png">
         </h1>
         
 
@@ -17,7 +17,7 @@
         <section class="settings__inputs__container">
           <fieldset>
             <legend >
-              <img src="./src/assets/img/icons/palette.svg" alt="palette">
+              <img src="/src/assets/img/icons/palette.svg" alt="palette">
               Game themes</legend>
             <label for="code">
               <input class="settings__input" type="radio" name="theme" id="code" value="code" checked />
@@ -31,7 +31,7 @@
 
           <fieldset>
             <legend>
-              <img src="./src/assets/img/icons/player.svg" alt="player">
+              <img src="/src/assets/img/icons/player.svg" alt="player">
               Choose player</legend>
             <label for="blue">
               <input type="radio" name="player" id="blue" value="blue" checked />
@@ -45,7 +45,7 @@
 
           <fieldset>
             <legend>
-              <img src="./src/assets/img/icons/board_size.svg" alt="board">
+              <img src="/src/assets/img/icons/board_size.svg" alt="board">
               Board size</legend>
             <label for="16">
               <input type="radio" name="boardSize" id="16" value="16" checked />
@@ -62,8 +62,20 @@
           </fieldset>
         </section>
 
-        <section>
-          <img class="thumbnail" src="/src/assets/img/thumbnails/code_theme_thumbnail.png" alt="theme thumbnail" />
+        <section class="settings__selection__container">
+          <img class="thumbnail" src="/memory-game/assets/img/thumbnails/code_theme_thumbnail.png" alt="theme thumbnail" />
+
+          <div class="settings__selection">
+            <span>Game theme</span>
+            <img src="./src/assets/img/ui-elements/line_vertical.png" alt="" >
+            <span>Player</span>
+            <img src="./src/assets/img/ui-elements/line_vertical.png" alt="">
+            <span>Board size</span>
+            <button class="button button--small button--primary">
+              <img class="button__icon--transition" src="/src/assets/img/icons/start.svg" alt="controller" />
+              <span>Start</span>
+            </button>
+          </div>
         </section>
       </div>
     </section>

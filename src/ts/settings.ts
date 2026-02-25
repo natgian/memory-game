@@ -1,4 +1,5 @@
 import "../styles/main.scss";
+import "../styles/components/_buttons.scss";
 
 class Settings {
   theme: "code" | "foods";
@@ -72,7 +73,7 @@ class Settings {
   private updateThumbnail(inputValue: string): void {
     const thumbnail = document.querySelector<HTMLImageElement>(".thumbnail");
     if (thumbnail) {
-      thumbnail.src = `src/assets/img/thumbnails/${inputValue}_theme_thumbnail.png`;
+      thumbnail.src = `/memory-game/assets/img/thumbnails/${inputValue}_theme_thumbnail.png`;
     }
   }
 }

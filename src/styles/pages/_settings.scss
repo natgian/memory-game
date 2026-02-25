@@ -36,6 +36,9 @@
 
   &__inputs__container {
     max-width: function.px-to-rem(400);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__inputs__container fieldset {
@@ -43,7 +46,6 @@
     flex-direction: column;
     gap: function.px-to-rem(12);
     border: none;
-    margin-bottom: function.px-to-rem(44);
 
     &:hover label:has(input:checked) {
       font-weight: 400;
@@ -72,4 +74,24 @@
     font-size: function.px-to-rem(24);
     margin-bottom: function.px-to-rem(12);
   }
+
+  &__selection__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: function.px-to-rem(46);
+  }
+
+  &__selection {
+    display: flex;
+    align-items: center;
+    gap: function.px-to-rem(16);
+    padding-inline: function.px-to-rem(14);
+    padding-block: function.px-to-rem(20);
+    background-color: #f6f6f6;
+  }
+}
+
+.thumbnail {
+  width: function.px-to-rem(460);
 }

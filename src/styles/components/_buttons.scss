@@ -8,7 +8,8 @@
   font-family: variable.$font-accent;
   font-size: function.px-to-rem(40);
   font-weight: 700;
-  padding: function.px-to-rem(24);
+  padding-block: function.px-to-rem(14);
+  padding-inline: function.px-to-rem(20);
   border: none;
   @include mixin.transition-transform;
 
@@ -25,6 +26,11 @@
     background-repeat: no-repeat;
     background-position: center;
     @include mixin.transition-transform;
+  }
+
+  &--small {
+    font-size: function.px-to-rem(20);
+    gap: function.px-to-rem(8);
   }
 
   &--primary {
