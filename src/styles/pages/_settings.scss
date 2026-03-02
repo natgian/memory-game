@@ -47,8 +47,11 @@
     gap: function.px-to-rem(12);
     border: none;
 
-    &:hover label:has(input:checked) {
+    &:hover label:has(input:checked):not(:hover) {
       font-weight: 400;
+    }
+    &:hover label:has(input:checked):not(:hover) img {
+      display: none;
     }
   }
 
@@ -56,6 +59,9 @@
     padding-left: function.px-to-rem(44);
     padding-bottom: function.px-to-rem(6);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: function.px-to-rem(10);
 
     &:hover {
       font-weight: 700;
@@ -64,6 +70,21 @@
     &:has(input:checked) {
       font-weight: 700;
     }
+
+    &:has(input:checked) img,
+    &:hover img {
+      display: block;
+    }
+  }
+
+  &__inputs__container input {
+    width: function.px-to-rem(24);
+    height: function.px-to-rem(24);
+    accent-color: #303131;
+  }
+
+  &__option-icon {
+    display: none;
   }
 
   &__inputs__container legend {
@@ -89,9 +110,26 @@
     padding-inline: function.px-to-rem(14);
     padding-block: function.px-to-rem(20);
     background-color: #f6f6f6;
+    text-transform: capitalize;
+  }
+
+  &--complete .divider {
+    display: none;
+  }
+
+  &--complete .divider-complete {
+    display: block;
   }
 }
 
 .thumbnail {
   width: function.px-to-rem(460);
+}
+
+.divider {
+  display: block;
+}
+
+.divider-complete {
+  display: none;
 }
