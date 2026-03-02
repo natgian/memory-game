@@ -13,6 +13,10 @@
   border: none;
   @include mixin.transition-transform;
 
+  svg path {
+    fill: inherit;
+  }
+
   &__icon--transition {
     @include mixin.transition-transform;
   }
@@ -41,12 +45,19 @@
       transform: scale(1.05);
 
       .button__icon--transition {
-        transform: rotate(-30deg);
+        transform: rotate(-15deg);
       }
 
       .button__icon--arrow {
         background-image: url("../../assets/img/icons/arrow_hover.svg");
       }
+    }
+
+    &:disabled {
+      pointer-events: none;
+      user-select: none;
+      background-color: #dbdbd6;
+      color: #a3a1a1;
     }
   }
 }
