@@ -1,11 +1,5 @@
 import "../styles/main.scss";
-import "../styles/components/_buttons.scss";
-
-interface GameSettings {
-  theme: "code" | "foods";
-  player: "blue" | "orange" | null;
-  boardSize: "16" | "24" | "36" | null;
-}
+import { GameSettings } from "./interfaces";
 
 class Settings {
   currentSettings: GameSettings = {
@@ -22,6 +16,7 @@ class Settings {
    * Initializes Event Listeners for changes an hovering.
    */
   private init(): void {
+    this.initStartButtonListener();
     this.initThemeOnHoverListeners();
 
     this.initOnChangeListener("theme", (value) => {
@@ -143,6 +138,24 @@ class Settings {
    */
   private areSettingsComplete(): boolean {
     return this.currentSettings.player !== null && this.currentSettings.boardSize !== null;
+  }
+
+  /**
+   * Initializes the start button click event listener.
+   */
+  private initStartButtonListener(): void {
+    const startButton = document.querySelector<HTMLButtonElement>("#start-button");
+    startButton?.addEventListener("click", () => {
+      this.startGame();
+    });
+  }
+
+  /**
+   * Stores the game settings in the session storage and navigates to the game page.
+   */
+  private startGame(): void {
+    sessionStorage.setItem("gameSettings", JSON.stringify(this.currentSettings));
+    window.location.href = "game.html";
   }
 }
 
