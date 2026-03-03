@@ -1,8 +1,8 @@
-@use "./abstracts/variables";
 @use "./base/reset";
 @use "./base/typography";
 @use "./pages/home";
 @use "./pages/settings";
+@use "./components/buttons";
 
 body {
   height: 100vh;

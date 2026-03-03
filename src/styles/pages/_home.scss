@@ -1,7 +1,6 @@
 @use "../abstracts/variables" as variable;
 @use "../abstracts/mixins" as mixin;
 @use "../abstracts/functions" as function;
-@use "../components/buttons";
 
 .page-home {
   background-color: variable.$primary-dark;
