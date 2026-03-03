@@ -1,0 +1,158 @@
+{
+  "themes": {
+    "code": {
+      "cardBack": "code_card_back.png",
+      "cards": [
+        {
+          "name": "angular",
+          "img": "angular.png"
+        },
+        {
+          "name": "bootstrap",
+          "img": "bootstrap.png"
+        },
+        {
+          "name": "css",
+          "img": "css.png"
+        },
+        {
+          "name": "django",
+          "img": "django.png"
+        },
+        {
+          "name": "firebase",
+          "img": "firebase.png"
+        },
+        {
+          "name": "git",
+          "img": "git.png"
+        },
+        {
+          "name": "github",
+          "img": "github.png"
+        },
+        {
+          "name": "html",
+          "img": "html.png"
+        },
+        {
+          "name": "javascript",
+          "img": "javascript.png"
+        },
+        {
+          "name": "nodejs",
+          "img": "nodejs.png"
+        },
+        {
+          "name": "python",
+          "img": "python.png"
+        },
+        {
+          "name": "react",
+          "img": "react.png"
+        },
+        {
+          "name": "sass",
+          "img": "sass.png"
+        },
+        {
+          "name": "sql",
+          "img": "sql.png"
+        },
+        {
+          "name": "terminal",
+          "img": "terminal.png"
+        },
+        {
+          "name": "typescript",
+          "img": "typescript.png"
+        },
+        {
+          "name": "vscode",
+          "img": "vscode.png"
+        },
+        {
+          "name": "vue",
+          "img": "vue.png"
+        }
+      ]
+    },
+    "foods": {
+      "cardBack": "foods_card_back.png",
+      "cards": [
+        {
+          "name": "fries",
+          "img": "fries.png"
+        },
+        {
+          "name": "pizza",
+          "img": "pizza.png"
+        },
+        {
+          "name": "sandwich",
+          "img": "sandwich.png"
+        },
+        {
+          "name": "doughnut",
+          "img": "doughnut.png"
+        },
+        {
+          "name": "sushi",
+          "img": "sushi.png"
+        },
+        {
+          "name": "hotdog",
+          "img": "hotdog.png"
+        },
+        {
+          "name": "burger",
+          "img": "burger.png"
+        },
+        {
+          "name": "brezel",
+          "img": "brezel.png"
+        },
+        {
+          "name": "cupcake",
+          "img": "cupcake.png"
+        },
+        {
+          "name": "cake",
+          "img": "cake.png"
+        },
+        {
+          "name": "pudding",
+          "img": "pudding.png"
+        },
+        {
+          "name": "chocolate",
+          "img": "chocolate.png"
+        },
+        {
+          "name": "nuggets",
+          "img": "nuggets.png"
+        },
+        {
+          "name": "fajita",
+          "img": "fajita.png"
+        },
+        {
+          "name": "taco",
+          "img": "taco.png"
+        },
+        {
+          "name": "icecream",
+          "img": "icecream.png"
+        },
+        {
+          "name": "shrimp",
+          "img": "shrimp.png"
+        },
+        {
+          "name": "macarons",
+          "img": "macarons.png"
+        }
+      ]
+    }
+  }
+}
