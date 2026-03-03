@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as variable;
+
+.theme--code {
+  --color-text: #ffffff;
+  --color-primary: #66cfbc;
+  --color-bg-exit: #86e9d624;
+  --color-bg-exit-hover: #86e9d642;
+  --border-exit: #4dd5bc;
+
+  --color-bg: #303131;
+  --color-player-blue: #2bb1ff;
+  --color-player-orange: #f58e39;
+  --border-radius: 0px;
+  --icon-player: url("../../assets/img/icons/code_player.svg");
+  --font: #{variable.$font-accent};
+}
+
+.theme--foods {
+  --color-text: #ffffff;
+  --color-primary: #f3832d;
+  --color-bg-exit: #fff9f2;
+  --color-bg-exit-hover: #f3832d;
+
+  --color-bg: #ffffff;
+  --color-player-blue: #097fc5;
+  --color-player-orange: #ea6900;
+  --border-radius: 10px;
+  --icon-player: url("../../assets/img/icons/player.svg");
+  --font: "";
+}
