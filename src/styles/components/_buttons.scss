@@ -60,4 +60,26 @@
       color: #a3a1a1;
     }
   }
+
+  &--exit {
+    color: var(--color-text);
+    background-color: var(--color-bg-exit);
+    border: 1px solid var(--border-exit);
+    outline: 3px solid transparent;
+    outline-offset: -3px;
+    transition:
+      outline-color 200ms ease,
+      box-shadow 200ms ease;
+
+    &:hover {
+      background-color: var(--color-bg-exit-hover);
+      outline-color: var(--border-exit);
+      outline-offset: -3px;
+      box-shadow: 4px 4px 4px 0 #4dd5bc33;
+    }
+  }
+
+  &--back {
+    color: green;
+  }
 }

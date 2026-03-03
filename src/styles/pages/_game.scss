@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as variable;
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/functions" as function;
+
+.page-game {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font);
+}
+
+main {
+  max-width: function.px-to-rem(1200);
+  margin: 0 auto;
+  padding: function.px-to-rem(10) 0;
+}
+
+header {
+  @include mixin.flex-center(space-between);
+  padding: function.px-to-rem(24);
+}
+
+.players__container {
+  @include mixin.flex-center;
+  gap: function.px-to-rem(20);
+  background-color: #86e9d633;
+  padding: 18px 20px;
+}
+
+.player {
+  @include mixin.flex-center;
+  gap: function.px-to-rem(8);
+
+  &--blue {
+    color: var(--color-player-blue);
+  }
+
+  &--orange {
+    color: var(--color-player-orange);
+  }
+
+  &__icon {
+    width: 24px;
+    height: 20px;
+    mask-image: var(--icon-player);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+
+    &--blue {
+      background-color: var(--color-player-blue);
+    }
+
+    &--orange {
+      background-color: var(--color-player-orange);
+    }
+  }
+}
+
+.current-player__container {
+  @include mixin.flex-center();
+  gap: function.px-to-rem(8);
+  font-size: function.px-to-rem(24);
+}

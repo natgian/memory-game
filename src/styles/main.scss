@@ -1,9 +1,11 @@
 @use "./base/reset";
 @use "./base/typography";
+@use "./base/themes";
+@use "./components/buttons";
 @use "./pages/home";
 @use "./pages/settings";
-@use "./components/buttons";
+@use "./pages/game";
 
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
