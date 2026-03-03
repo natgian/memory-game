@@ -1,7 +1,7 @@
-@mixin flex-center {
+@mixin flex-center($justify: center) {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: $justify;
 }
 
 @mixin transition-transform($duration: 200ms, $timing: ease-out) {
