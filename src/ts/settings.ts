@@ -2,13 +2,16 @@ import "../styles/main.scss";
 import { GameSettings } from "./interfaces";
 
 class Settings {
+  basePath = import.meta.env.BASE_URL;
+
   currentSettings: GameSettings = {
     theme: "code",
-    player: null,
-    boardSize: null,
+    player: "blue",
+    boardSize: "16",
   };
 
   constructor() {
+    console.log(import.meta.env.BASE_URL);
     this.init();
   }
 
@@ -75,7 +78,7 @@ class Settings {
   private updateThumbnail(inputValue: string): void {
     const thumbnail = document.querySelector<HTMLImageElement>(".thumbnail");
     if (thumbnail) {
-      thumbnail.src = `/memory-game/assets/img/thumbnails/${inputValue}_theme_thumbnail.png`;
+      thumbnail.src = `${this.basePath}assets/img/thumbnails/${inputValue}_theme_thumbnail.png`;
     }
   }
 
