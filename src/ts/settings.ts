@@ -1,17 +1,16 @@
 import "../styles/main.scss";
-import { GameSettings } from "./interfaces";
+import { StartGameSettings } from "./interfaces";
 
 class Settings {
   basePath = import.meta.env.BASE_URL;
 
-  currentSettings: GameSettings = {
+  currentSettings: StartGameSettings = {
     theme: "code",
-    player: "blue",
-    boardSize: "16",
+    player: null,
+    boardSize: null,
   };
 
   constructor() {
-    console.log(import.meta.env.BASE_URL);
     this.init();
   }
 
