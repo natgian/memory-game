@@ -1,20 +1,34 @@
 import "../styles/main.scss";
-import { GameSettings } from "./interfaces";
-import { Card } from "./interfaces";
+import { GameSettings, Card, FlippedCard } from "./interfaces";
 import themeData from "../assets/data/themes.json";
+import { updateSpanText } from "./utils";
 
 class Game {
   basePath = import.meta.env.BASE_URL;
-  currentSettings: GameSettings = {
-    theme: "code",
-    player: "blue",
-    boardSize: "16",
+  currentSettings!: GameSettings;
+  currentPlayer: GameSettings["player"];
+  flippedCards: FlippedCard[] = [];
+
+  score = {
+    blue: 0,
+    orange: 0,
   };
 
+  /**
+   *
+   *
+   */
   constructor() {
     this.getGameSettings();
+    this.currentPlayer = this.currentSettings.player;
     this.applyTheme();
+    this.setInitialScore();
     this.initBoard(this.currentSettings);
+  }
+
+  private setInitialScore(): void {
+    updateSpanText("#score-blue", this.score.blue.toString());
+    updateSpanText("#score-orange", this.score.orange.toString());
   }
 
   /**
@@ -67,7 +81,7 @@ class Game {
     cardsContainer.innerHTML = cards
       .map(
         (card) => `
-                <button class="card">
+                <button class="card" data-card-name=${card.name}>
                   <div class="card__inner">
                     <div class="card__face card__face--front">
                       <img src="${this.basePath}assets/img/cards/${settings.theme}/${settings.theme}_card_back.png" />
@@ -90,10 +104,48 @@ class Game {
   private initCardListeners(cardsContainer: Element): void {
     cardsContainer.addEventListener("click", (event) => {
       const card = (event.target as HTMLElement).closest(".card") as HTMLButtonElement;
-      if (card) {
-        card.classList.toggle("is-flipped");
-      }
+      this.handleCardClick(card);
     });
+  }
+
+  /**
+   * Handles the card click.
+   *
+   * @param card - HTML button element
+   * @returns - Does nothing if the card is invalid or two cards are already flipped
+   */
+  private handleCardClick(card: HTMLButtonElement): void {
+    if (!card || !card.dataset.cardName) return;
+    if (this.flippedCards.length >= 2) return;
+
+    card.classList.toggle("is-flipped");
+    this.flippedCards.push({ button: card, name: card.dataset.cardName });
+
+    if (this.flippedCards.length === 2) {
+      this.flippedCards[0].name === this.flippedCards[1].name ? this.handleMatch() : this.handleMismatch();
+    }
+  }
+
+  /**
+   * Handles the matching of two cards by adding an "is-matched" CSS class and emptying the flippedCards
+   * array.
+   */
+  private handleMatch(): void {
+    this.flippedCards[0].button.classList.add("is-matched");
+    this.flippedCards[1].button.classList.add("is-matched");
+    this.flippedCards = [];
+  }
+
+  /**
+   * Handles the mismatch of two cards by removing the "is-flipped" class and emptying the flippedCards
+   * array.
+   */
+  private handleMismatch(): void {
+    setTimeout(() => {
+      this.flippedCards[0].button.classList.toggle("is-flipped");
+      this.flippedCards[1].button.classList.toggle("is-flipped");
+      this.flippedCards = [];
+    }, 1000);
   }
 
   /**
