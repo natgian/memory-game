@@ -1,5 +1,6 @@
 import "../styles/main.scss";
 import { StartGameSettings } from "./interfaces";
+import { updateSpanText } from "./utils";
 
 class Settings {
   basePath = import.meta.env.BASE_URL;
@@ -99,14 +100,14 @@ class Settings {
    * Updates the displayed selections.
    */
   private updateSelectionDisplay(): void {
-    this.updateSpanText("#selection-theme", `${this.currentSettings.theme} theme`);
+    updateSpanText("#selection-theme", `${this.currentSettings.theme} theme`);
 
     if (this.currentSettings.player) {
-      this.updateSpanText("#selection-player", `${this.currentSettings.player} Player`);
+      updateSpanText("#selection-player", `${this.currentSettings.player} Player`);
     }
 
     if (this.currentSettings.boardSize) {
-      this.updateSpanText("#selection-boardSize", `Board-${this.currentSettings.boardSize}-Cards`);
+      updateSpanText("#selection-boardSize", `Board-${this.currentSettings.boardSize}-Cards`);
     }
 
     this.updateDividerDisplay();
@@ -118,19 +119,6 @@ class Settings {
   private updateDividerDisplay(): void {
     const container = document.querySelector(".settings__selection");
     container?.classList.toggle("settings--complete", this.areSettingsComplete());
-  }
-
-  /**
-   * Updates the span text of the element.
-   *
-   * @param selector - CSS selector of the span element to update
-   * @param text - Text to be updated in the span
-   */
-  private updateSpanText(selector: string, text: string | null): void {
-    const element = document.querySelector<HTMLElement>(selector);
-    if (element && text) {
-      element.innerText = text;
-    }
   }
 
   /**
