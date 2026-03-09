@@ -14,3 +14,8 @@ export interface Card {
   name: string;
   img: string;
 }
+
+export interface FlippedCard {
+  button: HTMLButtonElement;
+  name: string;
+}
