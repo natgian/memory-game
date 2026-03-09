@@ -105,4 +105,8 @@ header {
   &.is-flipped .card__inner {
     transform: rotateY(180deg);
   }
+
+  &.is-matched {
+    border: 5px solid var(--border-exit);
+  }
 }
