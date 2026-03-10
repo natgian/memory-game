@@ -108,5 +108,6 @@ header {
 
   &.is-matched {
     border: 5px solid var(--border-exit);
+    pointer-events: none;
   }
 }
