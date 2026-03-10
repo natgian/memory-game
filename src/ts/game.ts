@@ -8,27 +8,21 @@ class Game {
   currentSettings!: GameSettings;
   currentPlayer: GameSettings["player"];
   flippedCards: FlippedCard[] = [];
-
+  matchedPairs: number = 0;
   score = {
     blue: 0,
     orange: 0,
   };
 
   /**
-   *
+   * Initializes the game by loading settings, applying the theme and setting up the board.
    *
    */
   constructor() {
     this.getGameSettings();
     this.currentPlayer = this.currentSettings.player;
     this.applyTheme();
-    this.setInitialScore();
     this.initBoard(this.currentSettings);
-  }
-
-  private setInitialScore(): void {
-    updateSpanText("#score-blue", this.score.blue.toString());
-    updateSpanText("#score-orange", this.score.orange.toString());
   }
 
   /**
@@ -122,29 +116,77 @@ class Game {
     this.flippedCards.push({ button: card, name: card.dataset.cardName });
 
     if (this.flippedCards.length === 2) {
-      this.flippedCards[0].name === this.flippedCards[1].name ? this.handleMatch() : this.handleMismatch();
+      this.isMatch() ? this.handleMatch() : this.handleMismatch();
     }
   }
 
   /**
-   * Handles the matching of two cards by adding an "is-matched" CSS class and emptying the flippedCards
-   * array.
+   * Checks if both card names match.
+   *
+   * @returns - True if the card names match, otherwise false
+   */
+  private isMatch(): boolean {
+    return this.flippedCards[0].name === this.flippedCards[1].name;
+  }
+
+  /**
+   * Switches the current player.
+   */
+  private switchPlayer(): void {
+    document.querySelector("#current-player")?.classList.remove(`player__icon--${this.currentPlayer}`);
+    this.currentPlayer = this.currentPlayer === "blue" ? "orange" : "blue";
+    document.querySelector("#current-player")?.classList.add(`player__icon--${this.currentPlayer}`);
+  }
+
+  /**
+   * Checks if the game is over.
+   *
+   * @returns - True if matchedPairs matches the board size, otherwise false
+   */
+  private isGameOver(): boolean {
+    return this.matchedPairs === parseInt(this.currentSettings.boardSize) / 2;
+  }
+
+  /**
+   * Updates the score table.
+   */
+  private updateScore(): void {
+    this.score[`${this.currentPlayer}`] += 1;
+    updateSpanText("#score-blue", this.score.blue.toString());
+    updateSpanText("#score-orange", this.score.orange.toString());
+  }
+
+  /**
+   * Handles the matching of two cards:
+   * - adds an "is-matched" class
+   * - empties the flippedCards array
+   * - updates the score
+   * - increments the matchedPairs property
+   * - checks if the game is over
    */
   private handleMatch(): void {
     this.flippedCards[0].button.classList.add("is-matched");
     this.flippedCards[1].button.classList.add("is-matched");
     this.flippedCards = [];
+    this.updateScore();
+    this.matchedPairs++;
+
+    if (this.isGameOver()) {
+      console.log("Game is over!");
+      console.log("Winner:", this.score.blue > this.score.orange ? "Blue" : "Orange");
+    }
   }
 
   /**
-   * Handles the mismatch of two cards by removing the "is-flipped" class and emptying the flippedCards
-   * array.
+   * Handles the mismatch of two cards by removing the "is-flipped" class, emptying the flippedCards
+   * array and switching the player.
    */
   private handleMismatch(): void {
     setTimeout(() => {
       this.flippedCards[0].button.classList.toggle("is-flipped");
       this.flippedCards[1].button.classList.toggle("is-flipped");
       this.flippedCards = [];
+      this.switchPlayer();
     }, 1000);
   }
 
