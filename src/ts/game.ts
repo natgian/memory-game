@@ -2,6 +2,7 @@ import "../styles/main.scss";
 import { GameSettings, Card, FlippedCard } from "./interfaces";
 import themeData from "../assets/data/themes.json";
 import { updateSpanText } from "./utils";
+import { cardTemplate, gameOverTemplate } from "./templates";
 
 class Game {
   basePath = import.meta.env.BASE_URL;
@@ -72,22 +73,7 @@ class Game {
    */
   private createCards(cardsContainer: Element, settings: GameSettings, cards: Card[]): void {
     cardsContainer.classList.add(`game__board--${settings.boardSize}`);
-    cardsContainer.innerHTML = cards
-      .map(
-        (card) => `
-                <button class="card" data-card-name=${card.name}>
-                  <div class="card__inner">
-                    <div class="card__face card__face--front">
-                      <img src="${this.basePath}assets/img/cards/${settings.theme}/${settings.theme}_card_back.png" />
-                    </div>
-                    <div class="card__face card__face--back">
-                      <img src="${this.basePath}assets/img/cards/${settings.theme}/${card.img}" />
-                    </div>
-                  </div>
-                </button>
-              `,
-      )
-      .join("");
+    cardsContainer.innerHTML = cards.map((card) => cardTemplate(card, this.basePath, settings.theme)).join("");
   }
 
   /**
@@ -172,8 +158,7 @@ class Game {
     this.matchedPairs++;
 
     if (this.isGameOver()) {
-      console.log("Game is over!");
-      console.log("Winner:", this.score.blue > this.score.orange ? "Blue" : "Orange");
+      this.handleGameOver();
     }
   }
 
@@ -187,6 +172,15 @@ class Game {
       this.flippedCards[1].button.classList.toggle("is-flipped");
       this.flippedCards = [];
       this.switchPlayer();
+    }, 1000);
+  }
+
+  private handleGameOver(): void {
+    setTimeout(() => {
+      document.body.classList.add("game-over");
+      const game = document.getElementById("game");
+      if (!game) return;
+      game.innerHTML = gameOverTemplate(this.score.blue, this.score.orange);
     }, 1000);
   }
 
