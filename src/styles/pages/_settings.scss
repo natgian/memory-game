@@ -57,7 +57,8 @@
 
   &__inputs__container label {
     padding-left: function.px-to-rem(44);
-    padding-bottom: function.px-to-rem(6);
+    padding-bottom: function.px-to-rem(4);
+    padding-top: function.px-to-rem(4);
     cursor: pointer;
     display: flex;
     align-items: center;
