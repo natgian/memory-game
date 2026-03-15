@@ -12,7 +12,9 @@
   --color-player-orange: #f58e39;
   --border-radius: 0px;
   --icon-player: url("../../assets/img/icons/code_player.svg");
-  --font: #{variable.$font-accent};
+  --icon-winner: url("../../assets/img/icons/player.svg");
+  --font-primary: #{variable.$font-accent};
+  --font-secondary: #{variable.$font-content};
 }
 
 .theme--foods {
@@ -26,5 +28,7 @@
   --color-player-orange: #ea6900;
   --border-radius: 10px;
   --icon-player: url("../../assets/img/icons/player.svg");
-  --font: "";
+  --icon-winner: url("../../assets/img/icons/player.svg");
+  --font-primary: "";
+  --font-secondary: "";
 }

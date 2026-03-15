@@ -10,6 +10,7 @@ class Game {
   currentPlayer: GameSettings["player"];
   flippedCards: FlippedCard[] = [];
   matchedPairs: number = 0;
+  winner: "blue" | "orange" = "blue";
   score = {
     blue: 0,
     orange: 0,
@@ -175,13 +176,42 @@ class Game {
     }, 1000);
   }
 
+  /**
+   * Handles game over
+   */
   private handleGameOver(): void {
+    this.setWinner();
+
     setTimeout(() => {
-      document.body.classList.add("game-over");
-      const game = document.getElementById("game");
-      if (!game) return;
-      game.innerHTML = gameOverTemplate(this.score.blue, this.score.orange);
+      this.showFinalScore();
+      setTimeout(() => {
+        this.showWinnerScreen();
+      }, 2000);
     }, 1000);
+  }
+
+  /**
+   * Sets the winner.
+   */
+  private setWinner(): void {
+    this.winner = this.score.blue > this.score.orange ? "blue" : "orange";
+  }
+
+  /**
+   * Shows the winner screen.
+   */
+  private showWinnerScreen(): void {
+    document.querySelector(".winner__overlay")?.classList.add("is-visible");
+  }
+
+  /**
+   * Shows the final score.
+   */
+  private showFinalScore() {
+    document.body.classList.add("game-over");
+    const game = document.getElementById("game");
+    if (!game) return;
+    game.innerHTML = gameOverTemplate(this.score.blue, this.score.orange, this.winner);
   }
 
   /**

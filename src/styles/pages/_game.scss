@@ -5,7 +5,7 @@
 .page-game {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font);
+  font-family: var(--font-primary);
 }
 
 main {
@@ -24,6 +24,7 @@ header {
   gap: function.px-to-rem(20);
   background-color: #86e9d633;
   padding: 18px 20px;
+  max-width: fit-content;
 }
 
 .player {
@@ -102,6 +103,10 @@ header {
     }
   }
 
+  &.is-flipped {
+    pointer-events: none;
+  }
+
   &.is-flipped .card__inner {
     transform: rotateY(180deg);
   }
@@ -110,4 +115,87 @@ header {
     border: 5px solid var(--border-exit);
     pointer-events: none;
   }
+}
+
+.game-over {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: var(--font-secondary);
+    color: var(--border-exit);
+    font-size: function.px-to-rem(124);
+    font-weight: 900;
+    padding-bottom: function.px-to-rem(104);
+  }
+
+  &__subtitle {
+    font-size: function.px-to-rem(26);
+    padding-bottom: function.px-to-rem(24);
+  }
+}
+
+.winner {
+  &__overlay {
+    background-color: var(--color-bg);
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+    @include mixin.transition-transform(400ms, ease-in);
+
+    &.is-visible {
+      transform: translateY(0);
+    }
+  }
+
+  &__title {
+    font-size: function.px-to-rem(40);
+  }
+
+  &__player {
+    font-size: function.px-to-rem(60);
+    font-weight: 700;
+    color: var(--);
+  }
+
+  &__icon {
+    padding-block: function.px-to-rem(64);
+    width: 200px;
+    height: 250px;
+    mask-image: var(--icon-winner);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+
+  &--color-blue {
+    color: var(--color-player-blue);
+  }
+
+  &--color-orange {
+    color: var(--color-player-orange);
+  }
+
+  &--bg-blue {
+    background-color: var(--color-player-blue);
+  }
+
+  &--bg-orange {
+    background-color: var(--color-player-orange);
+  }
+}
+
+.confetti {
+  max-width: function.px-to-rem(1200);
 }
