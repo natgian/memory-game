@@ -17,14 +17,20 @@ main {
 header {
   @include mixin.flex-center(space-between);
   padding: function.px-to-rem(24);
+  background-color: var(--color-header-bg);
+  border-radius: var(--border-radius);
 }
 
 .players__container {
   @include mixin.flex-center;
   gap: function.px-to-rem(20);
-  background-color: #86e9d633;
-  padding: 18px 20px;
+  background-color: var(--color-bg-exit-btn);
+  border-radius: var(--border-radius);
+  padding: function.px-to-rem(18) function.px-to-rem(20);
   max-width: fit-content;
+  font-weight: 700;
+  font-size: var(--font-size-player);
+  font-family: var(--font-btn);
 }
 
 .player {
@@ -39,12 +45,21 @@ header {
     color: var(--color-player-orange);
   }
 
+  &__text {
+    display: var(--display-text);
+  }
+
   &__icon {
-    width: 24px;
-    height: 20px;
+    width: var(--icon-player-width);
+    height: var(--icon-player-height);
     mask-image: var(--icon-player);
     mask-size: contain;
     mask-repeat: no-repeat;
+
+    //TODO:
+    &--wrapper {
+      background-color: red;
+    }
 
     &--blue {
       background-color: var(--color-player-blue);
@@ -112,7 +127,7 @@ header {
   }
 
   &.is-matched {
-    border: 5px solid var(--border-exit);
+    border: 5px solid var(--border-exit-btn);
     pointer-events: none;
   }
 }
@@ -130,7 +145,7 @@ header {
 
   &__title {
     font-family: var(--font-secondary);
-    color: var(--border-exit);
+    color: var(--border-exit-btn);
     font-size: function.px-to-rem(124);
     font-weight: 900;
     padding-bottom: function.px-to-rem(104);

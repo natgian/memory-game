@@ -12,19 +12,21 @@
         <div class="players__container">
           <div class="player player--blue">
             <div class="player__icon player__icon--blue"></div>
-            <span>Blue</span>
+            <span class="player__text">Blue</span>
             <span id="score-blue">0</span>
           </div>
           <div class="player player--orange">
             <div class="player__icon player__icon--orange"></div>
-            <span>Orange</span>
+            <span class="player__text">Orange</span>
             <span id="score-orange">0</span>
           </div>
         </div>
 
         <div class="current-player__container">
           Current player:
-          <div id="current-player" class="player__icon"></div>
+          <div class="player__icon--wrapper">
+            <div id="current-player" class="player__icon"></div>
+          </div>
         </div>
 
         <button class="button button--small button--exit">

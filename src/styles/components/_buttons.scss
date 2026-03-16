@@ -62,9 +62,12 @@
   }
 
   &--exit {
-    color: var(--color-text);
-    background-color: var(--color-bg-exit);
-    border: 1px solid var(--border-exit);
+    font-family: var(--font-btn);
+    font-weight: 700;
+    color: var(--color-text-exit-btn);
+    background-color: var(--color-bg-exit-btn);
+    border: 1px solid var(--border-exit-btn);
+    border-radius: var(--border-radius);
     outline: 3px solid transparent;
     outline-offset: -3px;
     transition:
@@ -72,8 +75,9 @@
       box-shadow 200ms ease;
 
     &:hover {
-      background-color: var(--color-bg-exit-hover);
-      outline-color: var(--border-exit);
+      color: var(--color-text-exit-btn_hover);
+      background-color: var(--color-bg-exit-btn-hover);
+      outline-color: var(--border-exit-btn);
       outline-offset: -3px;
       box-shadow: 4px 4px 4px 0 #4dd5bc33;
     }
