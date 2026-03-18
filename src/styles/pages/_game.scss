@@ -56,9 +56,17 @@ header {
     mask-size: contain;
     mask-repeat: no-repeat;
 
-    //TODO:
-    &--wrapper {
-      background-color: red;
+    &__wrapper {
+      padding: function.px-to-rem(4);
+      border-radius: function.px-to-rem(8);
+
+      &--blue {
+        background-color: var(--color-player-blue);
+      }
+
+      &--orange {
+        background-color: var(--color-player-orange);
+      }
     }
 
     &--blue {
@@ -67,6 +75,10 @@ header {
 
     &--orange {
       background-color: var(--color-player-orange);
+    }
+
+    &--white {
+      background-color: #ffffff;
     }
   }
 }

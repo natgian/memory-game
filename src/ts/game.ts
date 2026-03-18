@@ -46,7 +46,23 @@ class Game {
    */
   private applyTheme(): void {
     document.body.classList.add(`theme--${this.currentSettings.theme}`);
-    document.querySelector("#current-player")?.classList.add(`player__icon--${this.currentSettings.player}`);
+    this.initPlayerIcon();
+  }
+
+  /**
+   * Sets the initial current player icon based on the current theme and player.
+   */
+  private initPlayerIcon(): void {
+    const icon = document.querySelector<HTMLElement>("#current-player");
+    const wrapper = document.querySelector<HTMLElement>(".player__icon__wrapper");
+    if (!icon || !wrapper) return;
+
+    if (this.currentSettings.theme === "code") {
+      icon.classList.add(`player__icon--${this.currentPlayer}`);
+    } else {
+      icon.classList.add("player__icon--white");
+      wrapper.classList.add(`player__icon__wrapper--${this.currentPlayer}`);
+    }
   }
 
   /**
@@ -117,12 +133,41 @@ class Game {
   }
 
   /**
-   * Switches the current player.
+   * Switches the current player and updates the player icon accordingly.
    */
   private switchPlayer(): void {
-    document.querySelector("#current-player")?.classList.remove(`player__icon--${this.currentPlayer}`);
     this.currentPlayer = this.currentPlayer === "blue" ? "orange" : "blue";
-    document.querySelector("#current-player")?.classList.add(`player__icon--${this.currentPlayer}`);
+    const icon = document.querySelector<HTMLElement>("#current-player");
+    const wrapper = document.querySelector<HTMLElement>(".player__icon__wrapper");
+    if (!icon || !wrapper) return;
+
+    if (this.currentSettings.theme === "code") {
+      this.updateCodeThemeCurrentPlayerIcon(icon);
+    } else {
+      this.updateCurrentPlayerIcon(icon, wrapper);
+    }
+  }
+
+  /**
+   * Updates the current player icon for the "code" theme.
+   *
+   * @param icon - The icon element
+   */
+  private updateCodeThemeCurrentPlayerIcon(icon: HTMLElement): void {
+    icon.classList.remove("player__icon--blue", "player__icon--orange");
+    icon.classList.add(`player__icon--${this.currentPlayer}`);
+  }
+
+  /**
+   * Updates the current player icon.
+   *
+   * @param icon - The icon element
+   * @param wrapper - The wrapper element
+   */
+  private updateCurrentPlayerIcon(icon: HTMLElement, wrapper: HTMLElement): void {
+    icon.classList.add("player__icon--white");
+    wrapper.classList.remove("player__icon__wrapper--blue", "player__icon__wrapper--orange");
+    wrapper.classList.add(`player__icon__wrapper--${this.currentPlayer}`);
   }
 
   /**
