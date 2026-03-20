@@ -148,6 +148,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-game-over-bg);
 
   &__container {
     display: flex;
@@ -156,16 +157,18 @@ header {
   }
 
   &__title {
-    font-family: var(--font-secondary);
-    color: var(--border-exit-btn);
+    font-family: var(--font-primary);
+    color: var(--color-game-over-title);
     font-size: function.px-to-rem(124);
     font-weight: 900;
+    text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
     padding-bottom: function.px-to-rem(104);
   }
 
   &__subtitle {
     font-size: function.px-to-rem(26);
     padding-bottom: function.px-to-rem(24);
+    color: #ffffff;
   }
 }
 
@@ -179,6 +182,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: var(--align-winner);
     transform: translateY(-100%);
     @include mixin.transition-transform(400ms, ease-in);
 
@@ -194,16 +198,26 @@ header {
   &__player {
     font-size: function.px-to-rem(60);
     font-weight: 700;
-    color: var(--);
   }
 
   &__icon {
-    padding-block: function.px-to-rem(64);
-    width: 200px;
-    height: 250px;
+    width: 260px;
+    height: 300px;
     mask-image: var(--icon-winner);
     mask-size: contain;
     mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &__icon__wrapper {
+    width: 260px;
+    height: 300px;
+    margin-block: var(--icon-winner-wrapper-margin);
+    background-color: var(--color-winner-wrapper-bg);
+    box-shadow: var(--box-shadow-winner-wrapper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &--color-blue {
@@ -224,5 +238,8 @@ header {
 }
 
 .confetti {
+  width: 100%;
   max-width: function.px-to-rem(1200);
+  height: auto;
+  display: var(--display-text);
 }

@@ -256,7 +256,7 @@ class Game {
     document.body.classList.add("game-over");
     const game = document.getElementById("game");
     if (!game) return;
-    game.innerHTML = gameOverTemplate(this.score.blue, this.score.orange, this.winner);
+    game.innerHTML = gameOverTemplate(this.score.blue, this.score.orange, this.winner, this.currentSettings.theme);
   }
 
   /**

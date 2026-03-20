@@ -75,7 +75,7 @@
       box-shadow 200ms ease;
 
     &:hover {
-      color: var(--color-text-exit-btn_hover);
+      color: var(--color-text-exit-btn-hover);
       background-color: var(--color-bg-exit-btn-hover);
       outline-color: var(--border-exit-btn);
       outline-offset: -3px;
@@ -84,6 +84,21 @@
   }
 
   &--back {
-    color: green;
+    font-family: var(--font-btn);
+    font-weight: 700;
+    color: var(--color-text-back-btn);
+    background-color: var(--color-bg-back-btn);
+    border: var(--border-back-btn);
+    border-radius: var(--border-radius);
+    transition:
+      outline-color 200ms ease,
+      box-shadow 200ms ease;
+
+    &:hover {
+      color: var(--color-text-back-btn-hover);
+      background-color: var(--color-bg-back-btn-hover);
+      outline-color: var(--border-back-btn);
+      box-shadow: var(--box-shadow-button);
+    }
   }
 }

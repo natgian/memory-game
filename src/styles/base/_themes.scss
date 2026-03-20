@@ -1,16 +1,27 @@
-@use "../abstracts/variables" as variable;
-
 .theme--code {
   --color-primary: #66cfbc;
   --color-bg: #303131;
   --color-text: #ffffff;
   --color-header-bg: transparent;
+  --color-game-over-bg: #303131;
+  --color-game-over-title: #4dd5bc;
+  --color-winner-wrapper-bg: transparent;
+
+  --box-shadow-button: 4px 4px 4px 0 #4dd5bc33;
+  --box-shadow-winner-wrapper: none;
 
   --color-text-exit-btn: #ffffff;
-  --color-text-exit-btn_hover: #ffffff;
+  --color-text-exit-btn-hover: #ffffff;
   --color-bg-exit-btn: #86e9d624;
   --color-bg-exit-btn-hover: #86e9d642;
   --border-exit-btn: #4dd5bc;
+
+  --color-text-back-btn: #ffffff;
+  --color-text-back-btn-hover: #ffffff;
+  --color-bg-back-btn: #66cfbc;
+  --color-bg-back-btn-hover: #66cfbcb2;
+  --border-back-btn: 3px solid #3abca4;
+
   --border-radius: 0px;
 
   --color-player-blue: #2bb1ff;
@@ -20,8 +31,11 @@
   --icon-player: url("../../assets/img/icons/code_player.svg");
   --icon-player-width: 24px;
   --icon-player-height: 20px;
-  --display-text: inline-block;
   --icon-winner: url("../../assets/img/icons/player.svg");
+  --icon-winner-wrapper-margin: 32px;
+
+  --display-text: block;
+  --align-winner: flex-start;
 
   --font-primary: "Red Rose";
   --font-secondary: "Almarai";
@@ -33,12 +47,25 @@
   --color-bg: #ffffff;
   --color-text: #a45212;
   --color-header-bg: #f0e5d9;
+  --color-game-over-bg: #f3832d;
+  --color-game-over-title: #ffffff;
+  --color-winner-wrapper-bg: #f7e6d5;
+
+  --box-shadow-button: 3px 3px 3px 0 rgb(0, 0, 0, 0.2);
+  --box-shadow-winner-wrapper: 3px 3px 6px 0px rgb(0, 0, 0, 0.25);
 
   --color-text-exit-btn: #f3832d;
-  --color-text-exit-btn_hover: #ffffff;
+  --color-text-exit-btn-hover: #ffffff;
   --color-bg-exit-btn: #fff9f2;
   --color-bg-exit-btn-hover: #f3832d;
   --border-exit-btn: #f3832d;
+
+  --color-text-back-btn: #ffffff;
+  --color-text-back-btn-hover: #ffffff;
+  --color-bg-back-btn: #ffab3e;
+  --color-bg-back-btn-hover: #f3832d;
+  --border-back-btn: 2px solid #f3832d;
+
   --border-radius: 10px;
 
   --color-player-blue: #097fc5;
@@ -48,8 +75,11 @@
   --icon-player: url("../../assets/img/icons/player.svg");
   --icon-player-width: 32px;
   --icon-player-height: 32px;
-  --display-text: none;
   --icon-winner: url("../../assets/img/icons/player.svg");
+  --icon-winner-wrapper-margin: 64px;
+
+  --display-text: none;
+  --align-winner: center;
 
   --font-primary: "Klee One";
   --font-secondary: "Delius Unicase";
