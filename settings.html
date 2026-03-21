@@ -13,8 +13,8 @@
         <img class="settings__title--decoration" src="/src/assets/img/ui-elements/line_long.png" />
       </h1>
 
-      <section class="settings__content">
-        <section class="settings__inputs__container">
+      <form class="settings__content">
+        <div class="settings__inputs__container">
           <fieldset>
             <legend>
               <img src="/src/assets/img/icons/palette.svg" alt="palette" />
@@ -70,20 +70,20 @@
               <img class="settings__option-icon" src="/src/assets/img/ui-elements/line_short.png" alt="" />
             </label>
           </fieldset>
-        </section>
+        </div>
 
-        <section class="settings__selection__container">
+        <div class="settings__selection__container">
           <img class="thumbnail" src="/assets/img/thumbnails/code_theme_thumbnail.png" alt="theme thumbnail" />
 
           <div class="settings__selection">
             <span id="selection-theme">Game theme</span>
-            <img class="divider" src="/src/assets/img/ui-elements/line_vertical.png" alt="" />
+            <img class="divider" src="/src/assets/img/ui-elements/line_vertical.png" />
             <img class="divider-complete" src="./src/assets/img/ui-elements/line_vertical_active.png" alt="" />
             <span id="selection-player">Player</span>
-            <img class="divider" src="/src/assets/img/ui-elements/line_vertical.png" alt="" />
-            <img class="divider-complete" src="/src/assets/img/ui-elements/line_vertical_active.png" alt="" />
+            <img class="divider" src="/src/assets/img/ui-elements/line_vertical.png" />
+            <img class="divider-complete" src="/src/assets/img/ui-elements/line_vertical_active.png" />
             <span id="selection-boardSize">Board size</span>
-            <button id="start-button" class="button button--small button--primary" disabled>
+            <button type="button" id="start-button" class="button button--small button--primary" disabled>
               <svg class="button__icon button__icon--transition" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_2795_3588" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
                   <rect width="24" height="24" fill="currentColor" />
@@ -98,8 +98,8 @@
               <span>Start</span>
             </button>
           </div>
-        </section>
-      </section>
+        </div>
+      </form>
     </main>
 
     <script type="module" src="/src/ts/settings.ts"></script>
