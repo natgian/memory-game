@@ -1,15 +1,27 @@
 .theme--code {
+  // Main
   --color-primary: #66cfbc;
   --color-bg: #303131;
   --color-text: #ffffff;
+  --border-radius: 0px;
+
+  // Header
   --color-header-bg: transparent;
+
+  // Game Over
   --color-game-over-bg: #303131;
   --color-game-over-title: #4dd5bc;
-  --color-winner-wrapper-bg: transparent;
-  --color-text-dialog: var(--color-bg);
 
-  --box-shadow-button: 4px 4px 4px 0 #4dd5bc33;
+  // Winner
+  --color-winner-wrapper-bg: transparent;
   --box-shadow-winner-wrapper: none;
+
+  // Dialog
+  --color-text-dialog: var(--color-bg);
+  --border-radius-dialog: 0px;
+
+  // Buttons
+  --box-shadow-button: 4px 4px 4px 0 #4dd5bc33;
 
   --color-text-exit-btn: #ffffff;
   --color-text-exit-btn-hover: #ffffff;
@@ -24,39 +36,52 @@
   --border-back-btn: 3px solid #66cfbc;
   --border-back-btn-hover: 3px solid #3abca4;
 
-  --border-radius: 0px;
-  --border-radius-dialog: 0px;
-
+  // Player
   --color-player-blue: #2bb1ff;
   --color-player-orange: #f58e39;
-  --font-size-player: 24px;
+  --font-size-player: 1.5rem; // 24px
 
+  // Icons
   --icon-player: url("../../assets/img/icons/code_player.svg");
-  --icon-player-width: 24px;
-  --icon-player-height: 20px;
+  --icon-player-width: 1.5rem; // 24px
+  --icon-player-height: 1.25rem; // 20px
   --icon-winner: url("../../assets/img/icons/player.svg");
-  --icon-winner-wrapper-margin: 32px;
+  --icon-winner-wrapper-margin: 2rem; // 32px
 
+  // Layout
   --display-text: block;
   --align-winner: flex-start;
 
+  // Typography
   --font-primary: "Red Rose";
   --font-secondary: "Almarai";
   --font-btn: "Red Rose";
 }
 
 .theme--foods {
+  // Main
   --color-primary: #f3832d;
   --color-bg: #ffffff;
   --color-text: #a45212;
+  --border-radius: 0.625rem; // 10px
+
+  // Header
   --color-header-bg: #f0e5d9;
+
+  // Game Over
   --color-game-over-bg: #f3832d;
   --color-game-over-title: #ffffff;
-  --color-winner-wrapper-bg: #f7e6d5;
-  --color-text-dialog: var(--color-text);
 
-  --box-shadow-button: 3px 3px 3px 0 rgb(0, 0, 0, 0.2);
+  // Winner
+  --color-winner-wrapper-bg: #f7e6d5;
   --box-shadow-winner-wrapper: 3px 3px 6px 0px rgb(0, 0, 0, 0.25);
+
+  // Dialog
+  --color-text-dialog: var(--color-text);
+  --border-radius-dialog: 1.25rem; // 20px
+
+  // Buttons
+  --box-shadow-button: 3px 3px 3px 0 rgb(0, 0, 0, 0.2);
 
   --color-text-exit-btn: #f3832d;
   --color-text-exit-btn-hover: #ffffff;
@@ -71,22 +96,23 @@
   --border-back-btn: 2px solid #f3832d;
   --border-back-btn-hover: 2px solid #f3832d;
 
-  --border-radius: 10px;
-  --border-radius-dialog: 20px;
-
+  // Player
   --color-player-blue: #097fc5;
   --color-player-orange: #ea6900;
-  --font-size-player: 30px;
+  --font-size-player: 1.875rem; // 30px
 
+  // Icons
   --icon-player: url("../../assets/img/icons/player.svg");
-  --icon-player-width: 32px;
-  --icon-player-height: 32px;
+  --icon-player-width: 2rem; // 32px
+  --icon-player-height: 2rem; // 32px
   --icon-winner: url("../../assets/img/icons/player.svg");
-  --icon-winner-wrapper-margin: 64px;
+  --icon-winner-wrapper-margin: 4rem; // 64px
 
+  // Layout
   --display-text: none;
   --align-winner: center;
 
+  // Typography
   --font-primary: "Klee One";
   --font-secondary: "Delius Unicase";
   --font-btn: "Delius Unicase";
