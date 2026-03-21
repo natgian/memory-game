@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <button class="button button--small button--exit">
+        <button id="show-btn" class="button button--small button--exit">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_2030_394" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
               <rect width="30" height="30" fill="currentColor" />
@@ -41,13 +41,19 @@
               />
             </g>
           </svg>
-
           Exit game
         </button>
       </header>
       <section class="game__board"></section>
     </main>
 
+    <dialog>
+      <p>Are you sure you want to quit the game?</p>
+      <div class="dialog__buttons__wrapper">
+        <button id="close-btn" class="button button--small button--back">No, back to game</button>
+        <button id="exit-game-btn" class="button button--small button--exit">Exit game</button>
+      </div>
+    </dialog>
     <script type="module" src="/src/ts/game.ts"></script>
   </body>
 </html>

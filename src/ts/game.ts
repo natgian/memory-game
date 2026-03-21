@@ -25,6 +25,7 @@ class Game {
     this.currentPlayer = this.currentSettings.player;
     this.applyTheme();
     this.initBoard(this.currentSettings);
+    this.initDialogListeners();
   }
 
   /**
@@ -311,6 +312,27 @@ class Game {
       this.createCards(cardsContainer, settings, cards);
       this.initCardListeners(cardsContainer);
     }
+  }
+
+  /**
+   * Initializes the dialog event listeners for opening and closing the dialog, and quitting the game.
+   */
+  private initDialogListeners(): void {
+    const dialog = document.querySelector<HTMLDialogElement>("dialog");
+    if (!dialog) return;
+
+    document.querySelector("#show-btn")?.addEventListener("click", () => {
+      dialog.showModal();
+    });
+
+    document.querySelector("#close-btn")?.addEventListener("click", () => {
+      dialog.close();
+    });
+
+    document.querySelector("#exit-game-btn")?.addEventListener("click", () => {
+      sessionStorage.removeItem("gameSettings");
+      window.location.href = "settings.html";
+    });
   }
 }
 

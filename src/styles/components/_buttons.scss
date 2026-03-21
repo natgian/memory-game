@@ -33,7 +33,7 @@
   }
 
   &--small {
-    font-size: function.px-to-rem(20);
+    font-size: function.px-to-rem(16);
     gap: function.px-to-rem(8);
   }
 
@@ -66,20 +66,22 @@
     font-weight: 700;
     color: var(--color-text-exit-btn);
     background-color: var(--color-bg-exit-btn);
-    border: 1px solid var(--border-exit-btn);
+    border: var(--border-exit-btn);
     border-radius: var(--border-radius);
-    outline: 3px solid transparent;
-    outline-offset: -3px;
-    transition:
-      outline-color 200ms ease,
-      box-shadow 200ms ease;
+    transition: all 200ms ease;
 
     &:hover {
       color: var(--color-text-exit-btn-hover);
       background-color: var(--color-bg-exit-btn-hover);
-      outline-color: var(--border-exit-btn);
-      outline-offset: -3px;
-      box-shadow: 4px 4px 4px 0 #4dd5bc33;
+      box-shadow: var(--box-shadow-button);
+    }
+
+    .theme--code dialog & {
+      color: var(--color-primary);
+
+      &:hover {
+        background-color: var(--color-bg-exit-btn-hover);
+      }
     }
   }
 
@@ -90,15 +92,13 @@
     background-color: var(--color-bg-back-btn);
     border: var(--border-back-btn);
     border-radius: var(--border-radius);
-    transition:
-      outline-color 200ms ease,
-      box-shadow 200ms ease;
+    transition: all 200ms ease;
 
     &:hover {
       color: var(--color-text-back-btn-hover);
       background-color: var(--color-bg-back-btn-hover);
-      outline-color: var(--border-back-btn);
       box-shadow: var(--box-shadow-button);
+      border: var(--border-back-btn-hover);
     }
   }
 }
