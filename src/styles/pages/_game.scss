@@ -255,7 +255,7 @@ dialog {
     justify-content: space-between;
     border-radius: var(--border-radius-dialog);
     border: none;
-    padding: 40px;
+    padding: function.px-to-rem(40);
     font-size: function.px-to-rem(28);
     text-align: center;
     color: var(--color-text-dialog);

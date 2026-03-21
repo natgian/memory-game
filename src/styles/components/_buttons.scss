@@ -23,8 +23,8 @@
 
   &__icon--arrow {
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: function.px-to-rem(40);
+    height: function.px-to-rem(40);
     background-image: url("../../assets/img/icons/arrow.svg");
     background-size: contain;
     background-repeat: no-repeat;
