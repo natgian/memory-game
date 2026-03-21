@@ -139,7 +139,8 @@ header {
   }
 
   &.is-matched {
-    border: 5px solid var(--border-exit-btn);
+    border: var(--border-match);
+    box-shadow: var(--box-shadow-match);
     pointer-events: none;
   }
 }
@@ -195,10 +196,14 @@ header {
     font-size: function.px-to-rem(40);
   }
 
-  &__player {
+  &__player,
+  &__tie {
     font-size: function.px-to-rem(60);
     font-weight: 700;
-    padding-bottom: function.px-to-rem(48);
+  }
+
+  &__tie {
+    margin-block: function.px-to-rem(48);
   }
 
   &__icon {
@@ -213,12 +218,16 @@ header {
   &__icon__wrapper {
     width: 260px;
     height: 300px;
-    margin-bottom: var(--icon-winner-wrapper-margin);
+
     background-color: var(--color-winner-wrapper-bg);
     box-shadow: var(--box-shadow-winner-wrapper);
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__icon__wrapper--mb {
+    margin-block: var(--icon-winner-wrapper-margin);
   }
 
   &--color-blue {

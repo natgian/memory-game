@@ -65,7 +65,7 @@ export const winnerOverlayTemplate = (winner: string, theme: string): string => 
         <img class="confetti" src="${confettiImg}" alt="confetti" />
         <span class="winner__title">The winner is</span>
         <span class="winner__player ${theme === "code" ? `winner--color-${winner}` : ""}">${winner.toUpperCase()} PLAYER</span>
-        <div class="winner__icon__wrapper">
+        <div class="winner__icon__wrapper ${theme !== "code" ? "winner__icon__wrapper--mb" : ""}">
         <div class="winner__icon winner--bg-${winner}"></div>
         </div>
         <a href="index.html" class="button button--small button--${theme === "code" ? "exit" : "back"}">${theme === "code" ? "Back to start" : "Home"}</a>
@@ -82,7 +82,7 @@ export const tieOverlayTemplate = (theme: string): string => {
   return `
       <div class="winner__overlay">
         <img class="confetti" src="${confettiImg}" alt="confetti" />
-        <span class="winner__player">IT'S A TIE!</span>
+        <span class="winner__tie">IT'S A TIE!</span>
         <a href="index.html" class="button button--small button--${theme === "code" ? "exit" : "back"}">${theme === "code" ? "Back to start" : "Home"}</a>
       </div>
   `;

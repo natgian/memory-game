@@ -8,6 +8,10 @@
   // Header
   --color-header-bg: transparent;
 
+  // Card
+  --border-match: 5px solid #4dd5bc;
+  --box-shadow-match: 6px, 6px 8px #4dd5bc4d;
+
   // Game Over
   --color-game-over-bg: #303131;
   --color-game-over-title: #4dd5bc;
@@ -67,6 +71,10 @@
 
   // Header
   --color-header-bg: #f0e5d9;
+
+  // Card
+  --border-match: 4px solid #f3832d;
+  --box-shadow-match: none;
 
   // Game Over
   --color-game-over-bg: #f3832d;
