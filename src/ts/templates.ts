@@ -18,15 +18,7 @@ export const cardTemplate = (card: Card, basePath: string, theme: string): strin
 
 export const gameOverTemplate = (scoreBlue: number, scoreOrange: number, winner: string, theme: string): string => {
   return `
-      <div class="winner__overlay">
-        <img class="confetti" src="${confettiImg}" alt="confetti" />
-        <span class="winner__title">The winner is</span>
-        <span class="winner__player ${theme === "code" ? `winner--color-${winner}` : ""}">${winner.toUpperCase()} PLAYER</span>
-        <div class="winner__icon__wrapper">
-        <div class="winner__icon winner--bg-${winner}"></div>
-        </div>
-        <a href="index.html" class="button button--small button--${theme === "code" ? "exit" : "back"}">${theme === "code" ? "Back to start" : "Home"}</a>
-      </div>
+      ${winner === "tie" ? tieOverlayTemplate(theme) : winnerOverlayTemplate(winner, theme)}
       <div class="game-over__container">
         <h1 class="game-over__title">GAME OVER</h1>
         <h2 class="game-over__subtitle">Final score</h2>
@@ -42,6 +34,30 @@ export const gameOverTemplate = (scoreBlue: number, scoreOrange: number, winner:
             <span id="score-orange">${scoreOrange}</span>
           </div>
         </div>
+      </div>
+  `;
+};
+
+export const winnerOverlayTemplate = (winner: string, theme: string): string => {
+  return `
+      <div class="winner__overlay">
+        <img class="confetti" src="${confettiImg}" alt="confetti" />
+        <span class="winner__title">The winner is</span>
+        <span class="winner__player ${theme === "code" ? `winner--color-${winner}` : ""}">${winner.toUpperCase()} PLAYER</span>
+        <div class="winner__icon__wrapper">
+        <div class="winner__icon winner--bg-${winner}"></div>
+        </div>
+        <a href="index.html" class="button button--small button--${theme === "code" ? "exit" : "back"}">${theme === "code" ? "Back to start" : "Home"}</a>
+      </div>
+  `;
+};
+
+export const tieOverlayTemplate = (theme: string): string => {
+  return `
+      <div class="winner__overlay">
+        <img class="confetti" src="${confettiImg}" alt="confetti" />
+        <span class="winner__player">IT'S A TIE!</span>
+        <a href="index.html" class="button button--small button--${theme === "code" ? "exit" : "back"}">${theme === "code" ? "Back to start" : "Home"}</a>
       </div>
   `;
 };

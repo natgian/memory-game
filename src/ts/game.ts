@@ -10,7 +10,7 @@ class Game {
   currentPlayer: GameSettings["player"];
   flippedCards: FlippedCard[] = [];
   matchedPairs: number = 0;
-  winner: "blue" | "orange" = "blue";
+  winner: "blue" | "orange" | "tie" = "tie";
   score = {
     blue: 0,
     orange: 0,
@@ -240,7 +240,13 @@ class Game {
    * Sets the winner.
    */
   private setWinner(): void {
-    this.winner = this.score.blue > this.score.orange ? "blue" : "orange";
+    if (this.score.blue > this.score.orange) {
+      this.winner = "blue";
+    } else if (this.score.orange > this.score.blue) {
+      this.winner = "orange";
+    } else {
+      this.winner = "tie";
+    }
   }
 
   /**
