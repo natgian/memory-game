@@ -1,6 +1,13 @@
 import { Card } from "./interfaces";
 import confettiImg from "../assets/img/ui-elements/confetti.png";
 
+/**
+ * Creates a card element for the game board.
+ *
+ * @param card - The card data
+ * @param basePath - The base path for assets
+ * @param theme - The current theme
+ */
 export const cardTemplate = (card: Card, basePath: string, theme: string): string => {
   return `
   <button class="card" data-card-name=${card.name}>
@@ -16,6 +23,14 @@ export const cardTemplate = (card: Card, basePath: string, theme: string): strin
   `;
 };
 
+/**
+ * Creates the game over screen with final scores and winner overlay.
+ *
+ * @param scoreBlue - The final score of the blue player
+ * @param scoreOrange - The final score of the orange player
+ * @param winner - The winner ("blue", "orange" or "tie")
+ * @param theme - The current theme
+ */
 export const gameOverTemplate = (scoreBlue: number, scoreOrange: number, winner: string, theme: string): string => {
   return `
       ${winner === "tie" ? tieOverlayTemplate(theme) : winnerOverlayTemplate(winner, theme)}
@@ -38,6 +53,12 @@ export const gameOverTemplate = (scoreBlue: number, scoreOrange: number, winner:
   `;
 };
 
+/**
+ * Creates a winner overlay for the game over screen.
+ *
+ * @param winner - The winner ("blue" or "orange")
+ * @param theme - The current theme
+ */
 export const winnerOverlayTemplate = (winner: string, theme: string): string => {
   return `
       <div class="winner__overlay">
@@ -52,6 +73,11 @@ export const winnerOverlayTemplate = (winner: string, theme: string): string => 
   `;
 };
 
+/**
+ * Creates the tie overlay for the game over screen.
+ *
+ * @param theme - The current theme
+ */
 export const tieOverlayTemplate = (theme: string): string => {
   return `
       <div class="winner__overlay">
